@@ -1,113 +1,120 @@
+import Layout from "@/layouts/Layout";
 import Image from "next/image";
-import { Geist, Geist_Mono } from "next/font/google";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/pages/index.js
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <Layout title="Inicio">
+      {/* HERO */}
+      <section className="relative min-h-screen flex flex-col justify-center items-center text-center px-6 lg:px-20 py-24 overflow-hidden">
+        {/* Fondo de imagen */}
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="/images/hero-texture.jpg"
+            alt="Textura de fondo"
+            fill
+            className="object-cover opacity-20"
+            priority
+          />
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
+
+        {/* Contenido */}
+        <div className="relative z-10 max-w-4xl" data-aos="fade-up">
+          <h1 className="text-6xl md:text-8xl font-title tracking-tight text-atrevida-primary leading-tight mb-6 uppercase">
+            Somos ATREVIDA
+          </h1>
+          <p className="text-xl font-body text-[#1a1a1a] mb-10 leading-relaxed">
+            Diseñamos, creamos y sacamos del molde. Si no llama la atención, no
+            sirve. Somos la agencia que te hace ruido — del bueno, po.
+          </p>
+          <Link href="/contacto">
+            <button
+              className="bg-atrevida-primary text-white font-bold px-8 py-4 rounded-full hover:scale-105 transition transform"
+              data-aos="zoom-in"
+              data-aos-delay="200"
+            >
+              Conversemos al tiro
+            </button>
+          </Link>
+        </div>
+      </section>
+
+      {/* SERVICIOS */}
+      <section className="bg-white py-36 px-6 lg:px-20 text-left">
+        <h2
+          className="text-5xl md:text-6xl font-title text-atrevida-primary uppercase mb-20 text-center"
+          data-aos="fade-up"
         >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+          Lo que hacemos
+          <br />
+          <span className="text-[#1a1a1a] text-3xl font-light">
+            (y lo hacemos con cuática)
+          </span>
+        </h2>
+
+        <div className="grid md:grid-cols-3 gap-20 max-w-7xl mx-auto">
+          <div
+            className="flex flex-col gap-6"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <span className="text-atrevida-primary font-title text-2xl uppercase">
+              01. Branding
+            </span>
+            <p className="text-base font-body text-[#333] leading-relaxed">
+              Armamos identidades que se notan. Desde el logo hasta cómo hablai.
+              Tu marca queda pulenta, con personalidad propia.
+            </p>
+          </div>
+
+          <div
+            className="flex flex-col gap-6"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <span className="text-atrevida-primary font-title text-2xl uppercase">
+              02. UX / Web
+            </span>
+            <p className="text-base font-body text-[#333] leading-relaxed">
+              Páginas que se ven bacanes, cargan al toque y no marean. Porque tu
+              web tiene que dejar la cagá (de la buena).
+            </p>
+          </div>
+
+          <div
+            className="flex flex-col gap-6"
+            data-aos="fade-up"
+            data-aos-delay="300"
+          >
+            <span className="text-atrevida-primary font-title text-2xl uppercase">
+              03. Estrategia
+            </span>
+            <p className="text-base font-body text-[#333] leading-relaxed">
+              Campañas, contenido y medios con cabeza. Nada de hacer por hacer.
+              Acá todo tiene sentido y pega justo donde tiene que pegar.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA FINAL */}
+      <section
+        className="bg-black text-white py-36 px-6 lg:px-20 text-center"
+        data-aos="fade-up"
+      >
+        <h2 className="text-5xl md:text-6xl font-title mb-8 uppercase tracking-tight">
+          ¿Te atreves a hacer ruido?
+        </h2>
+        <p className="text-lg font-body max-w-xl mx-auto mb-12">
+          Si cachai que tu marca puede dar más y no querís lo mismo de siempre,
+          este es el momento de moverse.
+        </p>
+        <Link href="/contacto">
+          <button className="bg-white text-black font-bold px-8 py-4 rounded-full hover:scale-105 transition transform">
+            Hablemos ahora
+          </button>
+        </Link>
+      </section>
+    </Layout>
   );
 }
