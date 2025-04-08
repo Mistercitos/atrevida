@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
+import Loader from "@/components/Loader"; // ⬅️ Importa el loader
 import { Oswald, Montserrat } from "next/font/google";
 
 const oswald = Oswald({
@@ -24,6 +25,7 @@ export default function App({ Component, pageProps }) {
 
   return (
     <main className={`${oswald.variable} ${montserrat.variable}`}>
+      <Loader />
       <Component {...pageProps} />
     </main>
   );

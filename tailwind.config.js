@@ -1,21 +1,14 @@
-/** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: [
-    "./src/pages/**/*.{js,ts,jsx,tsx}",
-    "./src/components/**/*.{js,ts,jsx,tsx}",
-    "./src/layouts/**/*.{js,ts,jsx,tsx}",
-  ],
+  content: ["./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
       colors: {
-        atrevida: {
-          background: "#ebebeb",
-          primary: "#ec1848",
-        },
+        "atrevida-primary": "#ec1848",
+        "atrevida-background": "#ebebeb",
       },
       fontFamily: {
-        title: ["var(--font-oswald)"],
-        body: ["var(--font-montserrat)"],
+        title: ["Oswald", "sans-serif"],
+        body: ["Montserrat", "sans-serif"],
       },
     },
   },
